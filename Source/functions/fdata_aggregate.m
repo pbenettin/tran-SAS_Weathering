@@ -44,7 +44,7 @@ pos = find(~isnan(A.measC_Q)); %indexes where measC_Q is available
 data.measC_Q = A.measC_Q(pos);  
 data.indexC_Q=zeros(size(data.measC_Q));
 for i=1:length(data.indexC_Q)
-    [~,data.indexC_Q(i)]=min(abs(datenum(A.date(pos(i),:),'yyyy-mm-dd HH:MM')-data.dates));
+    [~,data.indexC_Q(i)]=min(abs(datenum(A.date(pos(i)))-data.dates));
 end
 
 

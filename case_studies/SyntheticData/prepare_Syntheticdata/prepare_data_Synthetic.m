@@ -279,7 +279,7 @@ if flag_dataexport == 1
     fprintf(fid,'- Cin, input tracer concentration (here, d18O in permil)\n');
     fprintf(fid,'- wi, indicator of wetness index, non-dimensional and confined within [0-1]. Here, it is the ratio between soil runoff versus total runoff\n');
     fprintf(fid,'- measC_Q, output sampled concentration (here it''s all NaN)\n\n');
-    fprintf(fid,'Missing values are indicates as NaN');
+    fprintf(fid,'Missing values are indicated as NaN');
     fclose(fid);
 
     fprintf(' done\n')

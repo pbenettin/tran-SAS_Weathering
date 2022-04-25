@@ -16,6 +16,6 @@ The current model version can be run by executing the script `model_STARTER_weat
 To run the model on your own data, you need to prepare a new case study:
 
 - create a new directory inside the 'case_studies' folder
-- prepare a .csv data table formatted as Syntheticdata_fast2.csv (see also the associated README file)
+- prepare a .csv data table formatted as SyntheticData.csv (see also the associated README file)
 - fill-in a config_file for your case study
 - copy the new folder name into the text file case_study_name, such that the model starter selects the right case study

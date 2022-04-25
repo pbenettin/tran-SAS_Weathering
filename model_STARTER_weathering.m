@@ -126,8 +126,7 @@ end
 %--------------------------------------------------------------------------
 
 % let's go for the model run
-disp(' ')
-disp('calculating model output...')
+fprintf('\ncalculating model output... ')
 tic
 out = feval(ModelName,Pars,data); %run the model 'ModelName' using parameters 'Pars' and data 'data'
 toc
@@ -142,10 +141,18 @@ if display_output==1
     
     % load the results that were just created
     load(fullfile(data.case_study_path,'results',data.outfilename))
-        
+    
     % plot the output
     if flag_plot.active == 1
-        run(fullfile('Source','plotting_scripts','plot_results_isoweathering')); %run a script that plots some results
+        % check if a script 'plot_results_isoweathering' exists within the
+        % case study folder, and in case execute it
+        if exist(fullfile(data.case_study_path,'plot_results.m'),'file') ~= 0
+            fprintf('\nplotting case-study-specific results...\n')
+            run(fullfile(data.case_study_path,'plot_results'));
+        else % otherwise run the default plotting script
+            fprintf('\nplotting default results...\n')
+            run(fullfile('Source','plotting_scripts','plot_results_isoweathering')); %run a script that plots some results
+        end
     end
     
 end

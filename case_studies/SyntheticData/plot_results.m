@@ -2,6 +2,8 @@
 % standalone but it can be automatically called at the end of the model
 % starter if any plot_flag is set to 1
 
+addpath(genpath(fullfile('..','..','Source')))
+
 %--------------------------------------------------------------------------
 % load the data
 %--------------------------------------------------------------------------
@@ -9,8 +11,7 @@
 if ~exist('C_Qm','var')
     
     % edit here if you want to modify the selected output file or the plot flags
-    case_study = fscanf(fopen(fullfile('..','..','case_study_name.txt')),'%s');
-    load(fullfile('..','..','case_studies',case_study,'results','all_output')) %loading the default output file 'all_output'
+    load(fullfile('results','all_output')) %loading the default output file 'all_output'
     flag_plot.Cout = 1;    %main plot with the full concentration timeseries
     flag_plot.TTDs = 1;    %plot TTDs for selected days
     flag_plot.agestats = 1;      %plot with additional age timeseries

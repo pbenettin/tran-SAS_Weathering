@@ -45,9 +45,9 @@ list.chem7 = 10^-2; %[-] rlim2 factor to compute limiting C for rare isotope rea
 % GENERAL SIMULATION SETTINGS
 
 % select the CASE STUDY and the MODEL 
-data.case_study = 'Syntheticdata_fast2';
+data.case_study = 'SyntheticData';
 data.case_study_path = fullfile('..','case_studies',data.case_study);
-datasetName='Syntheticdata_fast2.csv';  %text file with data (check formatting specs)
+datasetName='SyntheticData.csv';  %text file with data (check formatting specs)
 ModelName='SAS_EFs_isoweathering';  %more advanced weathering model
 
 % select the AGGREGATION timestep and the STORAGE threshold (numerical parameters)

@@ -70,6 +70,8 @@ end
 
 % FIGURE WITH age-C and age-delta values
 figure
+R2 = zeros(length(ii_sel),2); %matrix with the R2 of the linear relationship 
+% between the different Fyw (rows) and C/CLIM (column 1) and d_f (column 2)
 
 % show them
 for jj = 1:length(ii_sel)
@@ -109,4 +111,12 @@ for jj = 1:length(ii_sel)
         plot(Fyw(per,ii),d_f(per),'-o','MarkerSize',3,...
             'Color',cols4ev(i,:),'DisplayName',sprintf('Event %d',i))
     end
+
+    % also compute some R2
+    mdl_C = fitlm(C_Qm/CLIM_m,Fyw(:,jj));
+    mdl_delta = fitlm(d_f,Fyw(:,jj));
+    R2(jj,1) = mdl_C.Rsquared.Ordinary;
+    R2(jj,2) = mdl_delta.Rsquared.Ordinary;
+
+
 end

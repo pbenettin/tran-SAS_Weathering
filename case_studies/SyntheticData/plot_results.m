@@ -3,6 +3,7 @@
 % starter if any plot_flag is set to 1
 
 addpath(genpath(fullfile('..','..','Source')))
+addpath(fullfile('plots'))
 
 %--------------------------------------------------------------------------
 % load the data
